@@ -1,0 +1,13 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kartapolaka-app/website.git"
+  },
+  "author": "IF Team",
+  "bugs": {
+    "url": "https://github.com/kartapolaka-app/website/issues"
+  },
+  "homepage": "https://kartapolaka-app.github.io/website"
+}
