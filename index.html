@@ -1,20 +1,730 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <title>Privacy Policy for Karta Polaka</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://kartapolaka-app.github.io/website/assets/styles.css"/>
-    <meta name="robots" content="noindex"/>
-    <meta property="og:title" content="Karta Polaka"/>
-    <meta property="og:image" content="https://kartapolaka-app.github.io/website/assets/appicon_512.png"/>
-    <meta property="og:image:width" content="512"/>
-    <meta property="og:image:height" content="512"/>
-</head>
-<body>
-    <div class="page">
-        <a href="about/private-policy.html">Private Policy</a>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Karta Polaka - Prepare for Your Polish Card Exam</title>
+
+        <meta
+            name="description"
+            content="Karta Polaka - Preparatory materials for Polish Card exam. Learn about Poland's history, culture, traditions, and famous Poles."
+        />
+        <meta property="og:title" content="Karta Polaka" />
+        <meta
+            property="og:description"
+            content="Prepare for your Polish Card exam with interactive learning materials"
+        />
+        <meta
+            property="og:image"
+            content="https://kartapolaka-app.github.io/website/assets/appicon_512.png"
+        />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <meta property="og:type" content="website" />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Oxygen, Ubuntu, Cantarell, sans-serif;
+                line-height: 1.6;
+                color: #1a1a1a;
+                background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+                min-height: 100vh;
+            }
+
+            /* Navigation Header */
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 64px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .navbar {
+                max-width: 1200px;
+                width: 100%;
+                padding: 0 32px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .logo {
+                font-size: 22px;
+                font-weight: 700;
+                color: #1a1a1a;
+                text-decoration: none;
+                letter-spacing: -0.5px;
+                transition: color 0.3s ease;
+            }
+
+            .logo:hover {
+                color: #333;
+            }
+
+            .nav-center {
+                display: flex;
+                gap: 32px;
+                list-style: none;
+            }
+
+            .nav-link {
+                text-decoration: none;
+                color: #666;
+                font-size: 14px;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #1a1a1a;
+            }
+
+            /* Language Switcher */
+            .lang-switcher {
+                display: flex;
+                gap: 8px;
+                background: rgba(0, 0, 0, 0.04);
+                padding: 6px 10px;
+                border-radius: 20px;
+            }
+
+            .lang-btn {
+                background: none;
+                border: none;
+                padding: 6px 12px;
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 16px;
+                transition: all 0.3s ease;
+                color: #666;
+                letter-spacing: 0.3px;
+            }
+
+            .lang-btn.active {
+                background: #1a1a1a;
+                color: white;
+            }
+
+            .lang-btn:hover:not(.active) {
+                color: #1a1a1a;
+            }
+
+            /* Main Content */
+            main {
+                padding-top: 64px;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 80px 24px;
+                min-height: calc(100vh - 64px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-content {
+                max-width: 900px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: clamp(32px, 8vw, 72px);
+                font-weight: 700;
+                margin-bottom: 24px;
+                line-height: 1.2;
+                letter-spacing: -1px;
+                color: #1a1a1a;
+            }
+
+            .hero p {
+                font-size: clamp(16px, 2vw, 20px);
+                color: #666;
+                margin-bottom: 48px;
+                line-height: 1.6;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Buttons */
+            .cta-container {
+                display: flex;
+                gap: 16px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn {
+                padding: 14px 32px;
+                font-size: 16px;
+                font-weight: 600;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                white-space: nowrap;
+            }
+
+            .btn-primary {
+                background: #1a1a1a;
+                color: white;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .btn-primary:hover {
+                background: #333;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn-secondary {
+                background: rgba(255, 255, 255, 0.9);
+                color: #1a1a1a;
+                border: 1.5px solid rgba(0, 0, 0, 0.12);
+            }
+
+            .btn-secondary:hover {
+                background: white;
+                border-color: rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+
+            /* Features Section */
+            .features {
+                max-width: 1000px;
+                margin: 60px auto 80px;
+                padding: 0 24px;
+            }
+
+            .section-title {
+                font-size: 32px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 16px;
+                color: #1a1a1a;
+            }
+
+            .section-subtitle {
+                text-align: center;
+                color: #666;
+                margin-bottom: 48px;
+                font-size: 16px;
+            }
+
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 32px;
+            }
+
+            .feature-card {
+                padding: 32px;
+                background: rgba(255, 255, 255, 0.6);
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                border-radius: 12px;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+            }
+
+            .feature-card:hover {
+                background: rgba(255, 255, 255, 0.8);
+                border-color: rgba(0, 0, 0, 0.12);
+                transform: translateY(-4px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            }
+
+            .feature-icon {
+                font-size: 32px;
+                margin-bottom: 16px;
+                display: block;
+            }
+
+            .feature-card h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 12px;
+                color: #1a1a1a;
+            }
+
+            .feature-card p {
+                font-size: 14px;
+                color: #666;
+                line-height: 1.6;
+            }
+
+            /* Footer */
+            footer {
+                background: #1a1a1a;
+                color: white;
+                padding: 48px 24px;
+                text-align: center;
+                margin-top: 80px;
+            }
+
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .footer-links {
+                display: flex;
+                gap: 24px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-bottom: 24px;
+                font-size: 14px;
+            }
+
+            .footer-links a {
+                color: #ccc;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-links a:hover {
+                color: white;
+            }
+
+            .footer-contact {
+                font-size: 14px;
+                color: #ccc;
+                margin-top: 16px;
+            }
+
+            .footer-contact a {
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-contact a:hover {
+                text-decoration: underline;
+            }
+
+            .footer-copyright {
+                margin-top: 24px;
+                font-size: 12px;
+                color: #999;
+            }
+
+            /* Language Sections */
+            .lang-section {
+                display: none;
+            }
+
+            .lang-section.active {
+                display: block;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                header {
+                    height: 56px;
+                }
+
+                .navbar {
+                    height: 56px;
+                    padding: 0 16px;
+                }
+
+                .nav-center {
+                    display: none;
+                }
+
+                .logo {
+                    font-size: 20px;
+                }
+
+                .hero {
+                    padding: 60px 20px;
+                    min-height: calc(100vh - 56px);
+                }
+
+                .hero h1 {
+                    font-size: 40px;
+                }
+
+                .hero p {
+                    font-size: 16px;
+                    margin-bottom: 32px;
+                }
+
+                .cta-container {
+                    flex-direction: column;
+                    gap: 12px;
+                }
+
+                .btn {
+                    width: 100%;
+                    justify-content: center;
+                    padding: 12px 24px;
+                }
+
+                .features {
+                    margin: 40px auto 60px;
+                    padding: 0 16px;
+                }
+
+                .section-title {
+                    font-size: 28px;
+                }
+
+                .features-grid {
+                    grid-template-columns: 1fr;
+                    gap: 24px;
+                }
+
+                .feature-card {
+                    padding: 24px;
+                }
+
+                .lang-switcher {
+                    padding: 6px 8px;
+                    gap: 4px;
+                }
+
+                .lang-btn {
+                    padding: 5px 10px;
+                    font-size: 11px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                header {
+                    height: 52px;
+                }
+
+                .navbar {
+                    height: 52px;
+                    padding: 0 12px;
+                }
+
+                .logo {
+                    font-size: 18px;
+                }
+
+                .hero h1 {
+                    font-size: 32px;
+                }
+
+                .hero p {
+                    font-size: 14px;
+                    margin-bottom: 24px;
+                }
+
+                .btn {
+                    font-size: 14px;
+                    padding: 12px 20px;
+                }
+
+                .section-title {
+                    font-size: 24px;
+                }
+
+                .feature-card {
+                    padding: 20px;
+                }
+
+                .feature-icon {
+                    font-size: 28px;
+                }
+
+                .lang-switcher {
+                    padding: 5px 6px;
+                }
+
+                .lang-btn {
+                    padding: 4px 8px;
+                    font-size: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation Header -->
+        <header>
+            <nav class="navbar">
+                <a href="#" class="logo">Karta Polaka</a>
+                <ul class="nav-center"></ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="pl">PL</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- English Section -->
+            <div class="lang-section active" data-lang="en">
+                <!-- Hero -->
+                <section class="hero" id="about">
+                    <div class="hero-content">
+                        <h1>Prepare for Your Polish Card Exam</h1>
+                        <p>
+                            Master the essential knowledge about Poland's
+                            history, culture, traditions, and famous Poles with
+                            interactive learning materials.
+                        </p>
+
+                        <div class="cta-container">
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.kartapolaka.app"
+                                class="btn btn-primary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Download on Google Play
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Polish Section -->
+            <div class="lang-section" data-lang="pl">
+                <!-- Hero -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1>Przygotuj się do egzaminu na Kartę Polaka</h1>
+                        <p>
+                            Opanuj niezbędną wiedzę o historii Polski, kulturze,
+                            tradycjach i słynnych Polakach dzięki interaktywnym
+                            materiałom edukacyjnym.
+                        </p>
+
+                        <div class="cta-container">
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.kartapolaka.app"
+                                class="btn btn-primary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Pobierz z Google Play
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Russian Section -->
+            <div class="lang-section" data-lang="ru">
+                <!-- Hero -->
+                <section class="hero" id="about">
+                    <div class="hero-content">
+                        <h1>Подготовьтесь к экзамену на Карту Поляка</h1>
+                        <p>
+                            Овладейте необходимыми знаниями об истории Польши,
+                            культуре, традициях и знаменитых поляках с помощью
+                            интерактивных учебных материалов.
+                        </p>
+
+                        <div class="cta-container">
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.kartapolaka.app"
+                                class="btn btn-primary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Скачать в Google Play
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="about/private-policy.html">Privacy Policy</a>
+                    <a href="mailto:Karta.polaka.info@gmail.com">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    Email:
+                    <a href="mailto:Karta.polaka.info@gmail.com"
+                        >Karta.polaka.info@gmail.com</a
+                    >
+                </div>
+                <p class="footer-copyright">
+                    © 2024 Karta Polaka. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const langButtons = document.querySelectorAll(".lang-btn");
+                const langSections = document.querySelectorAll(".lang-section");
+                const navLinks = document.querySelectorAll(".nav-link");
+
+                function setLanguage(lang) {
+                    // Update active button
+                    langButtons.forEach((btn) => {
+                        btn.classList.remove("active");
+                        if (btn.dataset.lang === lang) {
+                            btn.classList.add("active");
+                        }
+                    });
+
+                    // Update visible section
+                    langSections.forEach((section) => {
+                        section.classList.remove("active");
+                        if (section.dataset.lang === lang) {
+                            section.classList.add("active");
+                        }
+                    });
+
+                    // Update navigation link text
+                    navLinks.forEach((link) => {
+                        const text = link.dataset[lang] || link.textContent;
+                        link.textContent = text;
+                    });
+
+                    // Save preference
+                    localStorage.setItem("preferredLanguage", lang);
+                    document.documentElement.lang = lang;
+                }
+
+                // Event listeners for language buttons
+                langButtons.forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        setLanguage(btn.dataset.lang);
+                    });
+                });
+
+                // Initialize with saved preference or browser language
+                function initializeLanguage() {
+                    const saved = localStorage.getItem("preferredLanguage");
+                    if (saved) {
+                        setLanguage(saved);
+                    } else {
+                        const browserLang = navigator.language.split("-")[0];
+                        if (["en", "pl", "ru"].includes(browserLang)) {
+                            setLanguage(browserLang);
+                        } else {
+                            setLanguage("en");
+                        }
+                    }
+                }
+
+                initializeLanguage();
+
+                // Smooth scroll behavior for navigation links
+                document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
+                    anchor.addEventListener("click", function (e) {
+                        const href = this.getAttribute("href");
+
+                        // Check if this is a local anchor on current page
+                        if (href.startsWith("#")) {
+                            e.preventDefault();
+                            const activeSection = document.querySelector(
+                                ".lang-section.active",
+                            );
+                            const target = activeSection
+                                ? activeSection.querySelector(href)
+                                : document.querySelector(href);
+                            if (target) {
+                                setTimeout(() => {
+                                    target.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start",
+                                    });
+                                }, 0);
+                            }
+                        }
+                        // Check if it's a link to another page with an anchor
+                        else if (href.includes("#")) {
+                            const [page, anchor] = href.split("#");
+                            const currentPage =
+                                window.location.pathname.split("/").pop() ||
+                                "index.html";
+                            const currentPageName =
+                                currentPage === "" ? "index.html" : currentPage;
+
+                            // Check if linking to index page
+                            const isLinkingToIndex =
+                                page.includes("index.html") ||
+                                page === "" ||
+                                page === "." ||
+                                page === "../index.html";
+                            const isCurrentIndex =
+                                currentPageName === "index.html" ||
+                                currentPageName === "";
+
+                            // If linking to index page from index page, prevent default and scroll
+                            if (isLinkingToIndex && isCurrentIndex) {
+                                e.preventDefault();
+                                const activeSection = document.querySelector(
+                                    ".lang-section.active",
+                                );
+                                const target = activeSection
+                                    ? activeSection.querySelector("#" + anchor)
+                                    : document.querySelector("#" + anchor);
+                                if (target) {
+                                    setTimeout(() => {
+                                        target.scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "start",
+                                        });
+                                    }, 0);
+                                }
+                            }
+                        }
+                    });
+                });
+
+                // Add animation on scroll for feature cards
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px",
+                };
+
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animation =
+                                "slideInUp 0.6s ease forwards";
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll(".feature-card").forEach((card) => {
+                    card.style.opacity = "0";
+                    observer.observe(card);
+                });
+            });
+        </script>
+    </body>
 </html>
